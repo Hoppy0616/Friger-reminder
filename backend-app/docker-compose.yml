@@ -1,0 +1,15 @@
+version: "3.9"
+services: 
+  backend-API: 
+    build: 
+      context: ./app
+      working_dir: /go/src 
+      ports: 
+        - "8080:8080"
+        environment:
+  
+  db:
+    image: postgres:alpine
+    ports: "5432:5432"
+    restart: unless-stopped
+    environment:
